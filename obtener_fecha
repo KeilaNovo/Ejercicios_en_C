@@ -1,0 +1,23 @@
+#include<stdio.h>
+
+int main() 
+{
+
+int dia;
+int mes; 
+int anio;
+//Se tiene que definir la variable año como anio, ya que el compilador no lo reconoce y lanzaun error en la consola
+
+printf("Introduzca el dia:\n");
+scanf("%d",&dia);
+
+printf("Introduzca el mes:\n");
+scanf("%d", &mes);
+
+printf("Introduzca el año:\n");
+scanf("%d",&anio);
+
+printf("La fecha introducida es:%d/%d/%d\n", dia, mes, anio);
+
+return 0;
+}
