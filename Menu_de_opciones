@@ -1,0 +1,80 @@
+#include<stdio.h>
+
+int main()
+{
+
+int opcion;
+char nombre_usuario;
+
+printf("1.Dar nuevo usuario.\n");
+printf("2.Modificar nuevo usuario.\n");
+printf("3.Ver nuevo usuario.\n");
+printf("4.Ver usuario antiguo.\n");
+printf("5.Modificar usuarios antiguos.\n");
+printf("6.Ver reservas.\n");
+printf("7.Modificar reservas.\n");
+printf("8.Ver salidas.\n");
+printf("9.Dar de baja.\n");
+printf("10.Salir.\n");
+
+printf("Introduzca la opcion que desea ver:\n");
+scanf("%d", &opcion);
+
+
+	switch(opcion)
+	{
+		case 1:
+			printf("Introduzca nombre de nuevo usuario:\n");
+			scanf ("%c", &nombre_usuario);
+			break;
+
+		case 2:
+			printf("Introduzca nombre del usuario a modificar:\n");
+			scanf("%c", &nombre_usuario);
+			break;
+
+		case 3:
+			printf("Introduzca el nombre del usuario nuevo que quiera ver:\n");
+			scanf("%c", &nombre_usuario);
+			break;
+
+		case 4:
+			printf("Introduzca el nombre del usuario antiguo que quiera ver:\n");
+			scanf("%c", &nombre_usuario);
+			break;
+
+		case 5:
+			printf("Introduzca el nombre del usuario antiguo que desea modificar:\n");
+			scanf("%c", &nombre_usuario);
+			break;
+
+		case 6:
+			printf("Introduzca el nombre usuario del que quiera ver la reserva:\n");
+			scanf("%c", &nombre_usuario);
+			break;
+
+		case 7:
+			printf("Introduzca el nombre usuario del que quiera modificar la reserva:\n");
+			scanf("%c", &nombre_usuario);
+			break;
+
+		case 8:
+			printf("Introduzca el nombre del usuario del que quiera ver la salida:\n");
+			scanf("%c", &nombre_usuario);
+			break;
+
+		case 9:
+			printf("Introduzca el nombre del usuario que quiera dar de baja\n");
+			scanf("%c", &nombre_usuario);
+			break;
+
+		case 10:
+			printf("Salir del programa\n");
+			break;
+	}
+
+
+
+
+return 0;
+}
