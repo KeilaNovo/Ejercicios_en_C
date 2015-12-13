@@ -1,0 +1,18 @@
+#include<stdio.h>
+
+int main()
+{
+int a, b, c;
+
+
+printf("Introduzca el primer numero:\n");
+scanf("%d", &a);
+printf("Introduzca el segundo numero:\n");
+scanf("%d", &b);
+printf("Introduzca el tercer numero:\n");
+scanf("%d", &c);
+
+printf("El numero del medio es: %d\n", b);
+
+return 0;
+}
