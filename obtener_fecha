@@ -6,18 +6,85 @@ int main()
 int dia;
 int mes; 
 int anio;
-//Se tiene que definir la variable año como anio, ya que el compilador no lo reconoce y lanzaun error en la consola
+//Se tiene que definir la variable año como anio, ya que el compilador no lo reconoce y lanza un error en la consola
 
 printf("Introduzca el dia:\n");
 scanf("%d",&dia);
+if (dia<32)
+	{printf("Dia introducido es correcto\n");}
+else
+	{printf("El dia introducido no es correcto\n");
+	dia = 0;}
 
 printf("Introduzca el mes:\n");
-scanf("%d", &mes);
+scanf("%d",&mes);	
+
+	switch(mes)
+			{
+				case 1:
+					mes = "Enero";
+					break;
+
+				case 2:
+					mes = "Febrero";
+					break;
+
+				case 3:
+					mes= "Marzo";
+					break;
+	
+				case 4:
+					mes = "Abril";
+					break;
+
+				case 5:
+					mes ="Mayo";
+					break;
+
+				case 6:
+					mes="Junio";
+					break;
+
+				case 7:
+					mes="Julio";
+					break;
+
+				case 8:
+					mes = "Agosto";
+					break;
+
+				case 9:
+					mes = "Septiembre";
+					break;
+
+				case 10:
+					mes = "Octubre";
+					break;
+
+				case 11:
+					mes = "Noviembre";
+					break;
+
+				case 12:
+					mes ="Diciembre";
+					break;
+
+				default:
+					mes = "Error";
+					printf("El valor mes no es correcto\n");
+					break;
+		
+			}
+					
+
 
 printf("Introduzca el año:\n");
-scanf("%d",&anio);
+scanf ("%d", &anio);
 
-printf("La fecha introducida es:%d/%d/%d\n", dia, mes, anio);
+
+printf("La fecha introducida es:%d/%s/%d\n", dia, mes, anio);
+
+//Se convierte el valor de mes en una cadena, ya que en el switch hemos realizado el cambio de variable a string
 
 return 0;
 }
