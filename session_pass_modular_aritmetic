@@ -1,0 +1,59 @@
+#include<time.h> //libreria de acceso al reloj del sistema
+#include<stdio.h>
+#include<stdlib.h>
+
+
+//Definicion de las constantes
+
+#define PRIME_MODULE 761 //numero primo
+#define PRIMITIVE_ROOT 6 //raiz primitiva
+
+//Funcion de calculo de aritmetica modular
+int mod_exp(int b,int e,int p);//b:base, e:exponente, p:primo
+
+//Funcion principal
+int main() {
+
+	srand (time(NULL));//esta funcion debe de colocarse antes de rand() para poder generar
+   					  //los numeros aleatorios
+	int x = rand(); 
+	int Y;
+
+	//Obtencion del numero secreto x
+	printf("El valor de x, siendo un numero secreto aleatorio es: %d\n", x);
+	//LLamada a la funcion
+	int X = mod_exp(PRIMITIVE_ROOT,x,PRIME_MODULE);
+	printf("El valor X, clave publica a enviar al interlocutor es: X = %d\n", X);
+	//Obtencion del valor Y
+	printf("Teclee el Y entregado por el interlocutor: Y= ");
+	scanf("%d", &Y);
+	//Obtencion de la clave de sesion
+	int K = mod_exp(PRIMITIVE_ROOT,Y,PRIME_MODULE);
+	printf("El valor K, clave de sesion es: K= %d \n", K);
+
+	//system ("PAUSE");//Esta funcion en el entorno Linux no funciona
+	getchar();//Funcion que se asemeja a la finalidad de la funcion system("PAUSE")
+
+	return 0;
+}
+
+
+//Desarrollo de la funcion de calculo de la aritmetica modular
+
+int mod_exp ( int b, int e, int p){
+	int i;
+	int x; 
+	int power;//potencia
+	x=1;
+
+	power = b % p ;//potencia = base modulo numero primo
+
+	for ( i=0; i<8 *sizeof(int); i++){ //Bucle for en el que sizeof= tamaño de la variable entera
+		if (e & 1){ //comparador bit a bit del primer operando con el bit correspondiente al segundo operando con el valor 1
+			x = (x*power)%p;
+		}
+		e >>= 1;
+		power = (power*power) %p;
+	}
+	return x;
+}
